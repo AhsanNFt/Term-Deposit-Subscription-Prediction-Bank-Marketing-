@@ -80,9 +80,28 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn
 ### 📊 Exploratory Data Analysis (EDA)
 
 - **Target Class Distribution**: Revealed strong class imbalance
-- **Barplots & Countplots**: Showed trends in subscription across job types, marital status, contact method
-- **Correlation Heatmap**: Helped in understanding multicollinearity and feature selection
+  <img width="469" height="416" alt="image" src="https://github.com/user-attachments/assets/9a1bd87d-5382-4dda-a200-3fa741d5ba32" />
 
+  **Insights:**
+- Class 0 (No subscription): 88.48%
+
+- Class 1 (Yes subscription): 11.52%
+
+**Data is highly imbalanced.**
+
+- **Correlation Heatmap**: Helped in understanding multicollinearity and feature selection
+<img width="793" height="402" alt="image" src="https://github.com/user-attachments/assets/594a3a40-6557-45e7-abb3-f026c50066ef" />
+
+**Insights** 
+- duration (0.40) is the strongest predictor of term deposit subscription — longer calls increase chances.
+
+- pdays (0.10) and previous (0.12) show weak positive correlation — past contact matters.
+
+- balance, age, campaign have low correlation with the target.
+
+- pdays and previous are moderately correlated (0.58) — possible multicollinearity.
+
+``Focus on duration, previous, and pdays for predictive power.``
 ---
 
 ## 📈 Model Performance Visualizations
@@ -90,9 +109,13 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn
 ### 🔹 Logistic Regression (Balanced)
 
 #### 📉 Confusion Matrix
+<img width="430" height="344" alt="image" src="https://github.com/user-attachments/assets/a859a530-e80e-4a6b-8a19-f1a9420091b7" />
+
 Shows how well the model classified subscribed vs. not subscribed clients.
 
 #### 📈 ROC Curve
+<img width="461" height="340" alt="image" src="https://github.com/user-attachments/assets/465e496b-a0e3-4ea4-be9f-29a8e417a2ad" />
+
 Visualizes the trade-off between true positive and false positive rates. AUC indicates model’s ability to distinguish between classes.
 
 ---
@@ -100,9 +123,13 @@ Visualizes the trade-off between true positive and false positive rates. AUC ind
 ### 🌲 Random Forest (Balanced)
 
 #### 📉 Confusion Matrix
+<img width="452" height="342" alt="image" src="https://github.com/user-attachments/assets/bc65e521-336a-4af0-bdeb-ae606ee68ad5" />
+
 Shows classification results with weight-balanced learning on imbalanced data.
 
 #### 📈 ROC Curve
+<img width="470" height="339" alt="image" src="https://github.com/user-attachments/assets/b14c776b-caea-4a84-ab1a-e8962fa7d261" />
+
 Displays overall model discriminative ability under `class_weight='balanced'`.
 
 ---
@@ -110,9 +137,13 @@ Displays overall model discriminative ability under `class_weight='balanced'`.
 ### 🌱 Random Forest (SMOTE)
 
 #### 📉 Confusion Matrix
+<img width="438" height="343" alt="image" src="https://github.com/user-attachments/assets/0500e7cf-8847-493c-871b-8c9bc35c04a1" />
+
 Trained on oversampled (SMOTE) data, this confusion matrix reveals improved sensitivity to the minority class.
 
 #### 📈 ROC Curve
+<img width="459" height="347" alt="image" src="https://github.com/user-attachments/assets/7a4ae387-7960-4be6-8b15-14102e0cd0d8" />
+
 Shows how well the SMOTE-enhanced model performs compared to non-SMOTE versions.
 
 ---
@@ -146,13 +177,13 @@ Shows how well the SMOTE-enhanced model performs compared to non-SMOTE versions.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/Term-Deposit-Prediction.git
+git clone https://github.com/AhsanNFt/Term-Deposit-Subscription-Prediction-Bank-Marketing-.git
 
 # 2. Navigate to the project directory
-cd Term-Deposit-Prediction
+cd Term-Deposit-Subscription-Prediction-Bank-Marketing-
 
 # 3. Launch the notebook
-jupyter notebook Term_Deposit_Subscription_Prediction_Main.ipynb
+jupyter notebook Term Deposit Subscription Prediction_Main.ipynb
 ```
 
 ## 🤝 Contributing
@@ -163,4 +194,4 @@ Contributions are welcome! Submit issues or pull requests to improve the code or
 
 For feedback or collaboration:  
 - GitHub: `AhsanNFt`  
-- Email: `syedahsan0991@gmail.com`
+- Email: syedahsan0991@gmail.com
